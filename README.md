@@ -24,8 +24,8 @@ Developed by: Karthikeyan.K
 RegisterNumber:  212221230046
 */
 import matplotlib.pyplot as plt ## library for display the graph
-x = [5,6,3,2,6,7,1,2]
-y = [2,3,6,5,8,3,5,8]
+x = np.array(eval(input()))
+y = np.array(eval(input()))
 plt.scatter(x,y) #scatter plot function
 plt.plot(x,y) # to map the dot using line 
 plt.show() # to display the plot
