@@ -23,61 +23,41 @@ Program to implement univariate Linear Regression to fit a straight line using l
 Developed by: Karthikeyan.K
 RegisterNumber:  212221230046
 */
-import matplotlib.pyplot as plt ## library for display the graph
-x = np.array(eval(input()))
-y = np.array(eval(input()))
-plt.scatter(x,y) #scatter plot function
-plt.plot(x,y) # to map the dot using line 
-plt.show() # to display the plot
-from sys import base_prefix
 import numpy as np
 import matplotlib.pyplot as plt
-
-# assign values in array
-
-X = np.array(eval(input()))
-Y = np.array(eval(input()))
-
-# to find the mean values of X and Y
-
-X_mean = np.mean(X)
-print(X_mean)
-Y_mean = np.mean(Y)
-print(Y_mean)
-
-# To Find The Summation
-
-num = 0
-denum = 0
+#Preprocessing Input data
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+#Mean
+X_mean=np.mean(X)
+Y_mean=np.mean(Y)
+num=0 #for slope
+denom=0 #for slope
+#to find sum of (xi-x') & (yi-y') & (xi-x')^2
 for i in range(len(X)):
   num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  denum+=(X[i]-X_mean)**2
+  denom+=(X[i]-X_mean)**2
+#calculate slope
+m=num/denom
 
-# To find the slope for least square method
+#calculate intercept
+b=Y_mean-m*X_mean
 
-m=num/denum
-
-  # To find the Y intercept 
-
-b=Y_mean-m*(X_mean)
 print(m,b)
 
-#equation of the line 
-Y_pred = m*X+b
-print(Y_pred)
+#line equation
+y_predicted=m*X+b
+print(y_predicted)
 
-#plot graph
-plt.scatter(X,Y,color='yellow')
-plt.plot(X,Y_pred,color='red')
+#to plot graph
+plt.scatter(X,Y)
+plt.plot(X,y_predicted,color='red')
 plt.show()
 ```
 
 ## Output:
-![output](op1.png)
-![output](op2.png)
-![output](op3.png)
-![output](op4.png)
-![output](op5.png)
+![op](https://user-images.githubusercontent.com/93427303/196485106-d0988459-304f-4085-a8ed-291d3ea6a1be.png)
+
 
 
 ## Result:
