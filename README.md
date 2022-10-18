@@ -35,8 +35,8 @@ import matplotlib.pyplot as plt
 
 # assign values in array
 
-X = np.array([0,1,2,3,4,5,6,7,8,9])
-Y = np.array([1,3,2,5,7,8,8,9,10,12])
+X = np.array(eval(input()))
+Y = np.array(eval(input()))
 
 # to find the mean values of X and Y
 
